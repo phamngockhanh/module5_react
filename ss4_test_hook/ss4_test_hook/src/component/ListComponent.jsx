@@ -47,6 +47,9 @@ const ListStudent = () => {
               <td>
                 <Link to={`/detail/${student.id}`}>Detail</Link>
               </td>
+              <td>
+                <Link to={`/update/${student.id}`}>Update</Link>
+              </td>
             </tr>
           ))}
         </tbody>

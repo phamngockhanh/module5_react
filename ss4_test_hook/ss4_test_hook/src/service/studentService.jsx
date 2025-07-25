@@ -1,4 +1,4 @@
-const studentsData = [
+let studentsData = [
   { id: 1, name: "Phạm Ngọc Khánh", age: 18, className: "c0225G1" },
   { id: 2, name: "Phạm Ngọc Khánh 2", age: 18, className: "c0225G1" },
   { id: 3, name: "Phạm Ngọc Khánh 3 ", age: 18, className: "c0225G1" },
@@ -22,7 +22,7 @@ export const update = (student) => {
 };
 
 export const findById = (id) => {
-  return studentsData.find((s) => (s.id == id));
+  return studentsData.find((s) => s.id == id);
 };
 
 export const deleteStu = (id) => {
