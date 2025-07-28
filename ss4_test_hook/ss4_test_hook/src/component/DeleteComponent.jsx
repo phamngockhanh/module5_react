@@ -1,8 +1,8 @@
 import { Button, Modal } from "react-bootstrap";
 import { getAll, deleteStu } from "../service/studentService";
 const DeleteComponent = ({ deleteStudent, isShowModal, handleCloseModal }) => {
-  const handleDelete = () => {
-    deleteStu(deleteStudent.id);
+  const handleDelete = async () => {
+    await deleteStu(deleteStudent.id);
     console.log(getAll);
     handleCloseModal();
   };

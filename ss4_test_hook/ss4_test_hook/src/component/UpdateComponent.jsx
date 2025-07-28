@@ -10,15 +10,21 @@ const UpdateComponent = () => {
   const { id } = useParams();
   const [student, setStudent] = useState(undefined);
   useEffect(() => {
-    setStudent(findById(id));
+    const fetchData = async () => {
+      const student = await findById(id);
+      console.log(student);
+      setStudent(student);
+    };
+    fetchData();
   }, [id]);
 
   const navigate = useNavigate();
-  const handleUpdate = (value) => {
+  const handleUpdate = async (value) => {
     value = {
       ...value,
     };
-    update(value);
+    console.log(value);
+    await update(value);
     navigate("/list");
     Swal.fire({
       title: "Hello!",
@@ -29,7 +35,6 @@ const UpdateComponent = () => {
   };
 
   const validateUpdate = Yup.object({
-    id: Yup.string().required("Hãy nhập trường này"),
     name: Yup.string()
       .required("Hãy nhập trường này")
       .matches(/^[A-Z]\w+/),
@@ -37,9 +42,9 @@ const UpdateComponent = () => {
     className: Yup.string().required("Hãy nhập trường này"),
   });
 
-//   if (student.id == 0) {
-//     return "";
-//   }
+  //   if (student.id == 0) {
+  //     return "";
+  //   }
 
   return (
     <>
@@ -50,15 +55,6 @@ const UpdateComponent = () => {
           validationSchema={validateUpdate}
         >
           <Form>
-            <div>
-              <Field type="text" name="id" />
-              <ErrorMessage
-                name="id"
-                component={"div"}
-                style={{ color: "red" }}
-              ></ErrorMessage>
-            </div>
-
             <div>
               <Field type="text" name="name" />
               <ErrorMessage

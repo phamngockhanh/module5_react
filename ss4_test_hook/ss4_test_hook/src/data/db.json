@@ -1,0 +1,32 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Phạm Ngọc Khánh",
+            "subjects": [
+                "Math",
+                "Geography"
+            ],
+            "age": 25,
+            "className": "c0225G1"
+        },
+        {
+            "id": 2,
+            "name": "Phạm Ngọc Khánh 2",
+            "age": 18,
+            "className": "c0225G1"
+        },
+        {
+            "id": 3,
+            "name": "Phạm Ngọc Khánh 4",
+            "age": 18,
+            "className": "c0225G1"
+        },
+        {
+            "id": 4,
+            "name": "Phạm Ngọc Khánh 6",
+            "age": 18,
+            "className": "c0225G1"
+        }
+    ]
+}

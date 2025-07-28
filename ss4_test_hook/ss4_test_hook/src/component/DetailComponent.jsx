@@ -5,7 +5,12 @@ const DetailComponent = () => {
   const { id } = useParams();
   const [student, setStudent] = useState({ id: 0, name: "", className: "" });
   useEffect(() => {
-    setStudent(findById(id));
+    const fetchData = async () => {
+      const data = await findById(id);
+      console.log(data);
+      setStudent(data);
+    };
+    fetchData();
   }, [id]);
   return (
     <>

@@ -13,11 +13,11 @@ const AddComponent = () => {
   });
   const navigate = useNavigate();
 
-  const handleAdd = (value) => {
+  const handleAdd = async (value) => {
     value = {
       ...value,
     };
-    add(value);
+    await add(value);
     navigate("/list");
     Swal.fire({
       title: "Hello!",
@@ -28,7 +28,6 @@ const AddComponent = () => {
   };
 
   const handleValidate = Yup.object({
-    id: Yup.string().required("Yêu cầu nhập id"),
     name: Yup.string()
       .required("Yêu cầu nhập tên")
       .matches(/^[A-Z]\w+$/, "Tên nhập chưa định dạng"),
@@ -44,15 +43,6 @@ const AddComponent = () => {
         validationSchema={handleValidate}
       >
         <Form>
-          <div>
-            <label>ID</label>
-            <Field type="text" name="id" />
-            <ErrorMessage
-              name="id"
-              component={"div"}
-              style={{ color: "red" }}
-            />
-          </div>
           <div>
             <label>Name</label>
             <Field type="text" name="name" />
