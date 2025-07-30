@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const DB_URL = "https://crud-student-49e77-default-rtdb.asia-southeast1.firebasedatabase.app/students.json";
 const findAll = async () => {
   try {
-    const listAll = await axios.get("http://localhost:3001/students");
+    //const listAll = await axios.get("http://localhost:3001/students");
+    const listAll = await axios.get(DB_URL);
     return listAll.data;
   } catch (error) {
     console.log(error);
@@ -12,7 +14,8 @@ const findAll = async () => {
 
 const add = async (student) => {
   try {
-    await axios.post("http://localhost:3001/students", student);
+  //  await axios.post("http://localhost:3001/students", student);
+    await axios.post(DB_URL, student);
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +23,8 @@ const add = async (student) => {
 
 const update = async (student) => {
   try {
-    await axios.put(`http://localhost:3001/students/${student.id}`, student);
+   // await axios.put(`http://localhost:3001/students/${student.id}`, student);
+    await axios.put(`${DB_URL}/${student.id}`, student);
   } catch (error) {
     console.log(error);
   }
@@ -28,7 +32,8 @@ const update = async (student) => {
 
 const findById = async (id) => {
   try {
-    const findById = await axios.get(`http://localhost:3001/students/${id}`);
+    //const findById = await axios.get(`http://localhost:3001/students/${id}`);
+    const findById = await axios.get(`${DB_URL}/${id}`);
     return findById.data;
   } catch (error) {
     console.log(error);
@@ -38,7 +43,8 @@ const findById = async (id) => {
 
 const deleteById = async (id) => {
   try {
-    await axios.delete(`http://localhost:3001/students/${id}`);
+   // await axios.delete(`http://localhost:3001/students/${id}`);
+    await axios.delete(`${DB_URL}/${id}`);
   } catch (error) {
     console.log(error);
   }
@@ -46,7 +52,8 @@ const deleteById = async (id) => {
 
 const search = async (name, classCGId, page, limit) => {
   try {
-    let url = `http://localhost:3001/students?_page=${page}&_limit=${limit}`;
+   // let url = `http://localhost:3001/students?_page=${page}&_limit=${limit}`;
+    let url = `${DB_URL}?_page=${page}&_limit=${limit}`;
     if (name) {
       url += `&name_like=${name}`;
     }

@@ -1,8 +1,9 @@
 import axios from "axios";
-
+const DB_URL =
+  "https://crud-student-49e77-default-rtdb.asia-southeast1.firebasedatabase.app/subjects.json";
 const getAll = async () => {
   try {
-    const resp = await axios.get("http://localhost:3001/subjects");
+    const resp = await axios.get(DB_URL);
     return resp.data;
   } catch (error) {
     console.log(error);
@@ -12,7 +13,7 @@ const getAll = async () => {
 
 const findById = async (id) => {
   try {
-    const resp = await axios.get(`http://localhost:3001/subjects/${id}`);
+    const resp = await axios.get(`${DB_URL}/${id}`);
     return resp.data;
   } catch (error) {
     console.log(error);
@@ -20,5 +21,4 @@ const findById = async (id) => {
   }
 };
 
-
-export default { getAll, findById};
+export default { getAll, findById };
