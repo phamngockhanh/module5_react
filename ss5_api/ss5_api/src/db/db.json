@@ -1,0 +1,110 @@
+{
+  "students": [
+    {
+      "name": "Ngoc",
+      "age": 25,
+      "classCG": {
+        "id": 3,
+        "name": "C0425G1"
+      },
+      "subject": [
+        {
+          "id": 1,
+          "name": "JavaScript"
+        },
+        {
+          "id": 2,
+          "name": "Java Core"
+        },
+        {
+          "id": 3,
+          "name": "Java Web"
+        }
+      ],
+      "dateOfBirth": "2025-07-14",
+      "gender": false,
+      "address": "1231234",
+      "id": 12
+    },
+    {
+      "name": "Vinhlox",
+      "age": 19,
+      "classCG": {
+        "id": 2,
+        "name": "C0325G1"
+      },
+      "subject": [
+        {
+          "id": 1,
+          "name": "JavaScript"
+        },
+        {
+          "id": 3,
+          "name": "Java Web"
+        }
+      ],
+      "dateOfBirth": "2025-07-17",
+      "gender": false,
+      "address": "asdfdf",
+      "id": 13
+    },
+    {
+      "name": "Vinhlox",
+      "age": 20,
+      "classCG": {
+        "id": 2,
+        "name": "C0325G1"
+      },
+      "subject": [
+        {
+          "id": 1,
+          "name": "JavaScript"
+        },
+        {
+          "id": 2,
+          "name": "Java Core"
+        }
+      ],
+      "dateOfBirth": "2025-07-17",
+      "gender": false,
+      "address": "asdfdf",
+      "id": 14
+    }
+  ],
+  "classCGs": [
+    {
+      "id": 1,
+      "name": "C0225G1"
+    },
+    {
+      "id": 2,
+      "name": "C0325G1"
+    },
+    {
+      "id": 3,
+      "name": "C0425G1"
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "JavaScript"
+    },
+    {
+      "id": 2,
+      "name": "Java Core"
+    },
+    {
+      "id": 3,
+      "name": "Java Web"
+    },
+    {
+      "id": 4,
+      "name": "Spring Boot"
+    },
+    {
+      "id": 5,
+      "name": "ReactJS"
+    }
+  ]
+}
